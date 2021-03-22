@@ -1,0 +1,303 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>X-aye-lophone</title>
+
+
+<style>
+.key {
+	width:50px;
+	height:400px;
+	border:1px solid #000;
+	float:left;
+	background:#fff;
+	color:#000;
+	text-align:center;
+}
+.keyboard {
+	color:#ccc;
+}
+.key:active {
+	background:#ccc!important;
+	color:#000;
+}
+.active {
+	background:#ccc!important;
+	color:#000;
+}
+#a0 {
+	background:#fdff32;
+}
+#b0 {
+	background:#ffd639;
+}
+#c {
+	background:#fe1e1f;
+}
+#d {
+	background:#a40ffe;
+}
+#e {
+	background:#1e97ff;
+}
+#f {
+	background:#20feff;
+}
+#g {
+	background:#90f406;
+}
+#a {
+	background:#fdff32;
+}
+#b {
+	background:#ffd639;
+}
+#c2 {
+	background:#fe1e1f;
+}
+#d2 {
+	background:#a40ffe;
+}
+
+
+
+</style>
+
+</head>
+
+
+<div id="a0" class="key" onclick="playAudio('-1A.mp3')">A<br>Z</div>
+<div id="b0" class="key" onclick="playAudio('0B.mp3')">B<br>X</div>
+
+<div id="c" class="key" onclick="playAudio('1C.mp3')">C<br>C</div>
+<div id="d" class="key" onclick="playAudio('2D.mp3')">D<br>V</div>
+<div id="e" class="key" onclick="playAudio('3E.mp3')">E<br>B</div>
+<div id="f" class="key" onclick="playAudio('4F.mp3')">F<br>N</div>
+<div id="g" class="key" onclick="playAudio('5G.mp3')">G<br>M</div>
+<div id="a" class="key" onclick="playAudio('6A.mp3')">A<br>,</div>
+<div id="b" class="key" onclick="playAudio('7B.mp3')">B<br>.</div>
+
+<div id="c2" class="key" onclick="playAudio('8C.mp3')">C<br>/</div>
+<div id="d2" class="key" onclick="playAudio('9D.mp3')">D<br>Shift</div>
+
+
+
+<p>E G ED C E D C</p>
+<p class="keyboard">B M BV C B V C</p>
+<p></p>
+<p>D D D D E D C</p>
+<p class="keyboard">V V V V B V C</p>
+<p></p>
+<p>E G A E D C E D D C</p>
+<p class="keyboard">B M , B V C B V V C</p>
+<p></p>
+<p>A C D D D D D C E</p>
+<p class="keyboard">Z C V V V V V C B</p>
+<p></p>
+<p>– play it 2 times.</p>
+<p></p>
+<p>D E</p>
+<p class="keyboard">V B</p>
+<p></p>
+<p>F F F F E D C C D E D</p>
+<p class="keyboard">N N N N B V C C V B V</p>
+<p></p>
+<p>D E F F F F E D C E D</p>
+<p class="keyboard">V B N N N N B V C B V</p>
+<p></p>
+<p>D E F F F F E D C D E D</p>
+<p class="keyboard">V B N N N N B V C V B V</p>
+<p></p>
+<p>D E F E F G F F A A</p>
+<p class="keyboard">V B N B N M N N , ,</p>
+<p></p>
+<p>D C D C</p>
+<p class="keyboard">V C V C</p>
+
+
+<!-- https://easy-letter-notes.com/eye-of-the-tiger-notes/ -->
+
+<!-- https://audioalter.com/pitch-shifter/ -->
+
+<!-- https://tunebat.com/Analyzer -->
+
+
+
+
+<div id="message"></div>
+
+<body>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script>
+
+function playAudio(url) {
+  new Audio(url).play();
+}
+
+
+
+
+
+
+
+var aneg1 = false;
+var b0 = false;
+
+var c1 = false;
+var d2 = false;
+var e3 = false;
+var f4 = false;
+var g5 = false;
+var a6 = false;
+var b7 = false;
+
+var c8 = false;
+var d9 = false;
+
+
+document.addEventListener("keydown", function(event) {
+  if (event.keyCode == 90) {
+    if(!aneg1) {
+        aneg1 = true;
+	    playAudio('-1A.mp3');
+	    $("#a0").addClass('active');
+    }
+  }
+  if (event.keyCode == 88) {
+    if(!b0) {
+        b0 = true;
+	    playAudio('0B.mp3');
+	    $("#b0").addClass('active');
+    }
+  }
+  if (event.keyCode == 67) {
+    if(!c1) {
+        c1 = true;
+	    playAudio('1C.mp3');
+	    $("#c").addClass('active');
+    }
+  }
+  if (event.keyCode == 86) {
+    if(!d2) {
+        d2 = true;
+	    playAudio('2D.mp3');
+	    $("#d").addClass('active');
+    }
+  }
+  if (event.keyCode == 66) {
+    if(!e3) {
+        e3 = true;
+	    playAudio('3E.mp3');
+	    $("#e").addClass('active');
+    }
+  }
+  if (event.keyCode == 78) {
+    if(!f4) {
+        f4 = true;
+	    playAudio('4F.mp3');
+	    $("#f").addClass('active');
+    }
+  }
+  if (event.keyCode == 77) {
+    if(!g5) {
+        g5 = true;
+	    playAudio('5G.mp3');
+	    $("#g").addClass('active');
+    }
+  }
+  if (event.keyCode == 188) {
+    if(!a6) {
+        a6 = true;
+	    playAudio('6A.mp3');
+	    $("#a").addClass('active');
+    }
+  }
+  if (event.keyCode == 190) {
+    if(!b7) {
+        b7 = true;
+	    playAudio('7B.mp3');
+	    $("#b").addClass('active');
+    }
+  }
+  if (event.keyCode == 191) {
+    if(!c8) {
+        c8 = true;
+	    playAudio('8C.mp3');
+	    $("#c2").addClass('active');
+    }
+  }
+  if (event.keyCode == 16) {
+    if(!d9) {
+        d9 = true;
+	    playAudio('9D.mp3');
+	    $("#d2").addClass('active');
+    }
+  }
+});
+
+
+
+
+
+
+document.addEventListener("keyup", function(event) {
+  if (event.keyCode == 90) {
+    aneg1 = false;
+    $("#a0").removeClass('active');
+  }
+  if (event.keyCode == 88) {
+    b0 = false;
+    $("#b0").removeClass('active');
+  }
+  if (event.keyCode == 67) {
+    c1 = false;
+    $("#c").removeClass('active');
+  }
+  if (event.keyCode == 86) {
+    d2 = false;
+    $("#d").removeClass('active');
+  }
+  if (event.keyCode == 66) {
+    e3 = false;
+    $("#e").removeClass('active');
+  }
+  if (event.keyCode == 78) {
+    f4 = false;
+    $("#f").removeClass('active');
+  }
+  if (event.keyCode == 77) {
+    g5 = false;
+    $("#g").removeClass('active');
+  }
+  if (event.keyCode == 188) {
+    a6 = false;
+    $("#a").removeClass('active');
+  }
+  if (event.keyCode == 190) {
+    b7 = false;
+    $("#b").removeClass('active');
+  }
+  if (event.keyCode == 191) {
+    c8 = false;
+    $("#c2").removeClass('active');
+  }
+  if (event.keyCode == 16) {
+    d9 = false;
+    $("#d2").removeClass('active');
+  }
+});
+
+
+
+
+
+
+</script>
+
+
+</body>
+</html>
