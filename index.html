@@ -3,22 +3,64 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-
   <title>X-aye-lophone</title>
-
+  <meta name="description" content="The x-aye-lophone inspired by Limmy and Rosco from Twitch">
+  <meta content="width=device-width, initial-scale=1" name="viewport" />
+  <link rel="icon" type="image/png" href="img/favicon.png" />
+  <meta property="og:title" content="X-aye-lophone">
+  <meta property="og:description" content="The x-aye-lophone inspired by Limmy and Rosco from Twitch">
+  <meta property="og:image" content="img/aye-social-share.jpg">
+  <meta property="og:url" content="">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta property="og:site_name" content="X-aye-lophone">
+  <meta name="twitter:image:alt" content="X-aye-lophone">
 
 <style>
-.key {
-	width:50px;
-	height:400px;
-	border:1px solid #000;
-	float:left;
-	background:#fff;
-	color:#000;
-	text-align:center;
+html {
+	width:100%;
+	height:100%;
+	height:100vh;
+	padding:0;
+	margin:0;
 }
-.keyboard {
-	color:#ccc;
+html,body {
+	width:100%;
+	height:100%;
+	background-image: linear-gradient(to bottom, #583d82, #291841);
+	padding:0;
+	margin:0;
+}
+.key {
+	width: calc( 100% / 11);
+	height: 400px;
+	border: 2px solid #000;
+	border-right:1px;
+	float: left;
+	color: #000;
+	text-align: center;
+	box-sizing: border-box;
+	position:relative;
+}
+.key img {
+	position: absolute;
+    left: 7px;
+    bottom: -50px;
+    display:none;
+}
+.key p {
+	width: 100%;
+    bottom: 0;
+    position: absolute;
+    margin-bottom: 7px;
+    font-family: sans-serif;
+    font-weight: bold;
+    color: #171717;
+    font-size: 20px;
+}
+@media only screen and (min-width: 700px) {
+	.key img {
+	    display:block;
+	}
 }
 .key:active {
 	background:#ccc!important;
@@ -60,76 +102,177 @@
 }
 #d2 {
 	background:#a40ffe;
+	border-right:2px solid #000;
 }
-
-
-
+.flex-container {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+}
+.flex-item:nth-child(1) {
+    order: 0;
+    flex: 0 1 auto;
+    align-self: auto;
+}
+.flex-item:nth-child(2) {
+    order: 0;
+    flex: 0 1 auto;
+    align-self: auto;
+}
+.flex-item:nth-child(3) {
+    order: 0;
+    flex: 0 1 auto;
+    align-self: auto;
+}
+.keyboard-music {
+	width: 630px;
+	max-width: 98%;
+}
+.keyboard-letters {
+	width: 630px;
+	max-width: 98%;
+}
+.logo {
+	width: 700px;
+	max-width: 98%;
+}
+.logo img {
+	width:100%;
+}
+#ayeoftiger {
+	position:fixed;
+	top:0;
+	right:0;
+	height:100%;
+	width:270px;
+	background:#fff;
+	transition:0.2s;
+}
+#close {
+	position:absolute;
+	top:10px;
+	right:20px;
+	width:35px;
+	height:auto;
+}
+#close img, #tigeron img {
+	width:100%;
+}
+#tigeron {
+	position:absolute;
+	top:10px;
+	right:20px;
+	width:35px;
+	height:auto;
+}
+#song {
+    font-family: sans-serif;
+    font-weight: bold;
+    padding: 0 15px;
+    height: calc( 100% - 16px);
+    overflow: auto;
+}
+.title {
+	font-size:1.3em;
+	margin-top:16px;
+	text-decoration: underline;
+}
+.music {
+	margin-bottom:0px;
+}
+.keyboard {
+	margin-top:0px;
+	color:#1e97ff;
+}
+.clear {
+	clear:both;
+}
 </style>
 
 </head>
 
-
-<div id="a0" class="key" onclick="playAudio('-1A.mp3')">A<br>Z</div>
-<div id="b0" class="key" onclick="playAudio('0B.mp3')">B<br>X</div>
-
-<div id="c" class="key" onclick="playAudio('1C.mp3')">C<br>C</div>
-<div id="d" class="key" onclick="playAudio('2D.mp3')">D<br>V</div>
-<div id="e" class="key" onclick="playAudio('3E.mp3')">E<br>B</div>
-<div id="f" class="key" onclick="playAudio('4F.mp3')">F<br>N</div>
-<div id="g" class="key" onclick="playAudio('5G.mp3')">G<br>M</div>
-<div id="a" class="key" onclick="playAudio('6A.mp3')">A<br>,</div>
-<div id="b" class="key" onclick="playAudio('7B.mp3')">B<br>.</div>
-
-<div id="c2" class="key" onclick="playAudio('8C.mp3')">C<br>/</div>
-<div id="d2" class="key" onclick="playAudio('9D.mp3')">D<br>Shift</div>
-
-
-
-<p>E G ED C E D C</p>
-<p class="keyboard">B M BV C B V C</p>
-<p></p>
-<p>D D D D E D C</p>
-<p class="keyboard">V V V V B V C</p>
-<p></p>
-<p>E G A E D C E D D C</p>
-<p class="keyboard">B M , B V C B V V C</p>
-<p></p>
-<p>A C D D D D D C E</p>
-<p class="keyboard">Z C V V V V V C B</p>
-<p></p>
-<p>– play it 2 times.</p>
-<p></p>
-<p>D E</p>
-<p class="keyboard">V B</p>
-<p></p>
-<p>F F F F E D C C D E D</p>
-<p class="keyboard">N N N N B V C C V B V</p>
-<p></p>
-<p>D E F F F F E D C E D</p>
-<p class="keyboard">V B N N N N B V C B V</p>
-<p></p>
-<p>D E F F F F E D C D E D</p>
-<p class="keyboard">V B N N N N B V C V B V</p>
-<p></p>
-<p>D E F E F G F F A A</p>
-<p class="keyboard">V B N B N M N N , ,</p>
-<p></p>
-<p>D C D C</p>
-<p class="keyboard">V C V C</p>
-
-
-<!-- https://easy-letter-notes.com/eye-of-the-tiger-notes/ -->
-
-<!-- https://audioalter.com/pitch-shifter/ -->
-
-<!-- https://tunebat.com/Analyzer -->
-
-
-
-
-<div id="message"></div>
-
 <body>
+
+<div class="flex-container">
+	<div class="logo">
+		<img src="img/aye-logo.png">
+	</div>
+	<div class="keyboard-music">
+		<div id="a0" class="key" onclick="playAudio('ayes/-1A.mp3')"><p>A</p><img src="img/key-z.png"></div>
+		<div id="b0" class="key" onclick="playAudio('ayes/0B.mp3')"><p>B</p><img src="img/key-x.png"></div>
+
+		<div id="c" class="key" onclick="playAudio('ayes/1C.mp3')"><p>C</p><img src="img/key-c.png"></div>
+		<div id="d" class="key" onclick="playAudio('ayes/2D.mp3')"><p>D</p><img src="img/key-v.png"></div>
+		<div id="e" class="key" onclick="playAudio('ayes/3E.mp3')"><p>E</p><img src="img/key-b.png"></div>
+		<div id="f" class="key" onclick="playAudio('ayes/4F.mp3')"><p>F</p><img src="img/key-n.png"></div>
+		<div id="g" class="key" onclick="playAudio('ayes/5G.mp3')"><p>G</p><img src="img/key-m.png"></div>
+		<div id="a" class="key" onclick="playAudio('ayes/6A.mp3')"><p>A</p><img src="img/key-comma.png"></div>
+		<div id="b" class="key" onclick="playAudio('ayes/7B.mp3')"><p>B</p><img src="img/key-stop.png"></div>
+
+		<div id="c2" class="key" onclick="playAudio('ayes/8C.mp3')"><p>C</p><br><img src="img/key-slash.png"></div>
+		<div id="d2" class="key" onclick="playAudio('ayes/9D.mp3')"><p>D</p><br><img src="img/key-shift.png"></div>
+	</div>
+</div>
+<div class="clear"></div>
+
+<div id="tigeron">
+	<img src="img/music-icon.png">
+</div>
+
+<div id="ayeoftiger">
+	<div id="close">
+		<img src="img/close.png">
+	</div>
+
+	<div id="song">
+		<p class="title">Aye of the Tiger</p>
+
+		<p class="music">(Music notes in black)</p>
+		<p class="keyboard">(Keyboard keys in blue)</p>
+		<p></p>
+
+
+		<p class="music">E G E D C E D C</p>
+		<p class="keyboard">B M B V C B V C</p>
+		<p></p>
+		<p class="music">D D D D E D C</p>
+		<p class="keyboard">V V V V B V C</p>
+		<p></p>
+		<p class="music">E G A E D C E D D C</p>
+		<p class="keyboard">B M , B V C B V V C</p>
+		<p></p>
+		<p class="music">A C D D D D D C E</p>
+		<p class="keyboard">Z C V V V V V C B</p>
+		<p></p>
+		<p>– play it 2 times.</p>
+		<p></p>
+		<p class="music">D E</p>
+		<p class="keyboard">V B</p>
+		<p></p>
+		<p class="music">F F F F E D C C D E D</p>
+		<p class="keyboard">N N N N B V C C V B V</p>
+		<p></p>
+		<p class="music">D E F F F F E D C E D</p>
+		<p class="keyboard">V B N N N N B V C B V</p>
+		<p></p>
+		<p class="music">D E F F F F E D C D E D</p>
+		<p class="keyboard">V B N N N N B V C V B V</p>
+		<p></p>
+		<p class="music">D E F E F G F F A A</p>
+		<p class="keyboard">V B N B N M N N , ,</p>
+		<p></p>
+		<p class="music">D C D C</p>
+		<p class="keyboard">V C V C</p>
+
+		<p class="title">Project inspired by...</p>
+		<p class="music">Rosco's puppet show on <a href="https://www.twitch.tv/rosco/" target="_blank">twitch.tv/rosco</a></p>
+		<p class="music">Limmy's <a href="https://daftlimmy.github.io/Swearing-Xylophone/" target="_blank">Swearing-Xylophone</a> and his Twitch channel <a href="https://www.twitch.tv/limmy/" target="_blank">twitch.tv/limmy</a></p>
+
+	</div>
+</div>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 <script>
@@ -137,12 +280,6 @@
 function playAudio(url) {
   new Audio(url).play();
 }
-
-
-
-
-
-
 
 var aneg1 = false;
 var b0 = false;
@@ -163,86 +300,81 @@ document.addEventListener("keydown", function(event) {
   if (event.keyCode == 90) {
     if(!aneg1) {
         aneg1 = true;
-	    playAudio('-1A.mp3');
+	    playAudio('ayes/-1A.mp3');
 	    $("#a0").addClass('active');
     }
   }
   if (event.keyCode == 88) {
     if(!b0) {
         b0 = true;
-	    playAudio('0B.mp3');
+	    playAudio('ayes/0B.mp3');
 	    $("#b0").addClass('active');
     }
   }
   if (event.keyCode == 67) {
     if(!c1) {
         c1 = true;
-	    playAudio('1C.mp3');
+	    playAudio('ayes/1C.mp3');
 	    $("#c").addClass('active');
     }
   }
   if (event.keyCode == 86) {
     if(!d2) {
         d2 = true;
-	    playAudio('2D.mp3');
+	    playAudio('ayes/2D.mp3');
 	    $("#d").addClass('active');
     }
   }
   if (event.keyCode == 66) {
     if(!e3) {
         e3 = true;
-	    playAudio('3E.mp3');
+	    playAudio('ayes/3E.mp3');
 	    $("#e").addClass('active');
     }
   }
   if (event.keyCode == 78) {
     if(!f4) {
         f4 = true;
-	    playAudio('4F.mp3');
+	    playAudio('ayes/4F.mp3');
 	    $("#f").addClass('active');
     }
   }
   if (event.keyCode == 77) {
     if(!g5) {
         g5 = true;
-	    playAudio('5G.mp3');
+	    playAudio('ayes/5G.mp3');
 	    $("#g").addClass('active');
     }
   }
   if (event.keyCode == 188) {
     if(!a6) {
         a6 = true;
-	    playAudio('6A.mp3');
+	    playAudio('ayes/6A.mp3');
 	    $("#a").addClass('active');
     }
   }
   if (event.keyCode == 190) {
     if(!b7) {
         b7 = true;
-	    playAudio('7B.mp3');
+	    playAudio('ayes/7B.mp3');
 	    $("#b").addClass('active');
     }
   }
   if (event.keyCode == 191) {
     if(!c8) {
         c8 = true;
-	    playAudio('8C.mp3');
+	    playAudio('ayes/8C.mp3');
 	    $("#c2").addClass('active');
     }
   }
   if (event.keyCode == 16) {
     if(!d9) {
         d9 = true;
-	    playAudio('9D.mp3');
+	    playAudio('ayes/9D.mp3');
 	    $("#d2").addClass('active');
     }
   }
 });
-
-
-
-
-
 
 document.addEventListener("keyup", function(event) {
   if (event.keyCode == 90) {
@@ -291,13 +423,16 @@ document.addEventListener("keyup", function(event) {
   }
 });
 
+$("#close").click(function() {
+	console.log('click');
+  $("#ayeoftiger").css("right", "-270px");
+});
 
-
-
-
-
+$("#tigeron").click(function() {
+	console.log('click');
+  $("#ayeoftiger").css("right", "0px");
+});
 </script>
-
 
 </body>
 </html>
